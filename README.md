@@ -1,3 +1,22 @@
-# Typescript template
+# Advent of Code 2024
 
-Template with boilerplate for a TypeScript project with Prettier, ESLint, Jest, and VS Code settings.
+## Develop the puzzles
+
+-   Copy the folder `src/day-00` and rename it to the specific day
+-   In `src/index.ts`, update the day number
+
+# Run the solution
+
+Start a dry run for puzzle 01 or 02:
+
+```bash
+npm start 01
+npm start 02
+```
+
+Start a real run with the boolean for dry run false:
+
+```bash
+npm start 01 false
+npm start 02 false
+```
