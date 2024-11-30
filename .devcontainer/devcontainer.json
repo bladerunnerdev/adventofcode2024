@@ -1,0 +1,25 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aaron-bond.better-comments",
+        "vmsynkov.colonize",
+        "dbaeumer.vscode-eslint",
+        "github.vscode-github-actions",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "Orta.vscode-jest",
+        "ms-playwright.playwright",
+        "esbenp.prettier-vscode",
+        "Gruntfuggly.todo-tree",
+        "adamhartford.vscode-base64",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
