@@ -9,8 +9,6 @@ export class Puzzle02 extends PuzzleBase {
     }
 
     public solve(): string {
-        let solution = 0;
-
         const left: number[] = [];
         const right: number[] = [];
 
@@ -22,6 +20,8 @@ export class Puzzle02 extends PuzzleBase {
         });
 
         const rightCounted = _.countBy(right);
+
+        let solution = 0;
 
         for (const l of left) {
             solution += l * rightCounted[l] || 0;
