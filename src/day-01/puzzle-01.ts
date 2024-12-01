@@ -11,9 +11,7 @@ export class Puzzle01 extends PuzzleBase {
     public solve(): string {
         const left: number[] = [];
         const right: number[] = [];
-        const distances: number[] = [];
-
-        let solution = '';
+        let distance = 0;
 
         this.input.lines.forEach((line) => {
             const parts = line.split('   ');
@@ -27,13 +25,12 @@ export class Puzzle01 extends PuzzleBase {
 
         for (const [index, l] of leftSorted.entries()) {
             const r = rightSorted[index];
-            const distance = Math.abs(r - l);
-            distances.push(distance);
+            const diff = Math.abs(r - l);
+            distance += diff;
         }
 
-        solution = _.sum(distances).toString();
+        console.log('Solution:', distance);
 
-        console.log('Solution:', solution);
-        return solution;
+        return distance.toString();
     }
 }
