@@ -5,6 +5,10 @@
     "main": "index.js",
     "scripts": {
         "start": "ts-node src/index.ts",
+        "1": "npm start 01",
+        "2": "npm start 02",
+        "1final": "npm start 01 false",
+        "2final": "npm start 02 false",
         "build": "npm run clean && tsc",
         "clean": "rimraf dist",
         "watch": "tsc -w",
@@ -27,5 +31,9 @@
         "ts-jest": "^29.2.5",
         "ts-node": "^10.9.2",
         "typescript": "^5.6.3"
+    },
+    "dependencies": {
+        "@types/lodash": "^4.17.13",
+        "lodash": "^4.17.21"
     }
 }
