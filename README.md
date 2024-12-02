@@ -1,5 +1,11 @@
 # Advent of Code 2024
 
+## Get the puzzle input
+
+-   Go to the [Advent of Code](https://adventofcode.com/) website
+-   Login and get the session cookie
+-   Get the input here: https://adventofcode.com/2024/day/X/input
+
 ## Develop the puzzles
 
 -   Copy the folder `src/day-00` and rename it to the specific day
