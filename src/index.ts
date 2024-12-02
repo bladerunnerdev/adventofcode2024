@@ -1,5 +1,6 @@
-import { Puzzle01 } from './day-01/puzzle-01';
-import { Puzzle02 } from './day-01/puzzle-02';
+// TODO: change day number
+import { Puzzle01 } from './day-02/puzzle-01';
+import { Puzzle02 } from './day-02/puzzle-02';
 
 const puzzleNumber = process.argv[2];
 const dryRun = process.argv[3] !== 'false';
