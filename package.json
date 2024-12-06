@@ -4,9 +4,10 @@
     "description": "Template with boilerplate for a TypeScript project with eslint etc.",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node src/index.ts",
         "1": "npm start 01",
         "2": "npm start 02",
+        "copy": "ts-node src/prepare.ts",
+        "start": "ts-node src/index.ts",
         "1final": "npm start 01 false",
         "2final": "npm start 02 false",
         "build": "npm run clean && tsc",
@@ -34,6 +35,9 @@
     },
     "dependencies": {
         "@types/lodash": "^4.17.13",
+        "axios": "^1.7.9",
+        "chalk": "^4.1.2",
+        "dotenv": "^16.4.7",
         "lodash": "^4.17.21"
     }
 }
