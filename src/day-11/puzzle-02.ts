@@ -8,20 +8,18 @@ export class Puzzle02 extends PuzzleBase {
     }
 
     public solve(): string {
-        const initialArray = this.input.lines[0].split(' ').map((x) => parseInt(x));
+        let stones: Map<number, number> = new Map<number, number>();
 
-        const mutatedArrays: Map<number, number[]> = new Map<number, number[]>();
-        mutatedArrays.set(0, initialArray);
+        this.input.lines[0].split(' ').forEach((stone) => {
+            stones.set(parseInt(stone), 1);
+        });
 
-        console.log('Initial Array:', initialArray);
+        for (let index = 0; index < 75; index++) {
+            const newStones: Map<number, number> = new Map<number, number>();
 
-        let currentIteration = 0;
+            for (const [stone, count] of stones.entries()) {
+                const tempArray: number[] = [];
 
-        while (currentIteration < 75) {
-            const tempArray: number[] = [];
-            const currentArray = mutatedArrays.get(currentIteration);
-
-            for (const stone of currentArray!) {
                 if (stone === 0) {
                     tempArray.push(1);
                 } else if (stone.toString().length % 2 === 0) {
@@ -35,14 +33,20 @@ export class Puzzle02 extends PuzzleBase {
                 } else {
                     tempArray.push(stone * 2024);
                 }
+
+                for (const tempStone of tempArray) {
+                    // If stone is not in newStones, set it to count, otherwise add count to existing value
+                    newStones.set(tempStone, (newStones.get(tempStone) || 0) + count);
+                }
             }
 
-            currentIteration++;
-
-            mutatedArrays.set(currentIteration, tempArray);
+            stones = newStones;
         }
 
-        console.log('Solution:', mutatedArrays.get(currentIteration)!.length);
-        return 'Solution: ' + mutatedArrays.get(currentIteration)!.length;
+        console.log(
+            'Solution:',
+            Array.from(stones.values()).reduce((a, b) => a + b, 0)
+        );
+        return 'Solution';
     }
 }
